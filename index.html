@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickBill - GST Invoice Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="no-print">
+<div>
+<h1><span class="logo">₹</span>QuickBill</h1>
+<p>GST invoice generator for small businesses</p>
+</div>
+<div class="tools">
+<div id="swatches"></div>
+<button id="mode" class="ghost" aria-label="Toggle dark mode">🌙</button>
+</div>
+</header>
+<div class="layout">
+<section class="editor no-print">
+<h2>Your business</h2>
+<input data-p="seller.name" placeholder="Business name">
+<input data-p="seller.gstin" placeholder="GSTIN">
+<textarea data-p="seller.addr" rows="2" placeholder="Address"></textarea>
+<h2>Customer</h2>
+<input data-p="buyer.name" placeholder="Customer name">
+<textarea data-p="buyer.addr" rows="2" placeholder="Customer address"></textarea>
+<div class="row">
+<input data-p="no" placeholder="Invoice no">
+<input data-p="date" type="date">
+</div>
+<label class="chk"><input type="checkbox" data-p="igst"> Interstate sale (charge IGST)</label>
+<label class="chk"><input type="checkbox" data-p="paid"> Mark as paid</label>
+<h2>Items</h2>
+<div id="items"></div>
+<button id="add" class="ghost">+ Add item</button>
+<div class="actions">
+<button id="save">Save invoice</button>
+<button id="print">Print / Save as PDF</button>
+<button id="new" class="ghost">New invoice</button>
+</div>
+<h2>Saved invoices <button id="csv" class="ghost small">Export CSV</button></h2>
+<div id="stats" class="stats"></div>
+<ul id="history"></ul>
+</section>
+<section class="paper" id="paper"></section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
